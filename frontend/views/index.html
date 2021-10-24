@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="../assets/css/app.css" rel="stylesheet" />
+    <title>
+        Chat Bot
+    </title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div id="center-text">
+        <h2>ChatBox UI</h2>
+        <p>Message send and scroll to bottom enabled </p>
+    </div>
+    <div id="body">
+
+        <div id="chat-circle" class="btn btn-raised">
+            <div id="chat-overlay"></div>
+            <i class="material-icons">speaker_phone</i>
+        </div>
+
+        <div class="chat-box">
+            <div class="chat-box-header">
+                ChatBot
+                <span class="chat-box-toggle"><i class="material-icons">close</i></span>
+            </div>
+            <div class="chat-box-body">
+                <div class="chat-box-overlay">
+                </div>
+                <div class="chat-logs">
+
+                </div>
+                <!--chat-log -->
+            </div>
+            <div class="chat-input">
+                <form>
+                    <input type="text" id="chat-input" placeholder="Send a message..." autofocus autocomplete="off" />
+                    <button type="submit" class="chat-submit" id="chat-submit"><i
+                            class="material-icons">send</i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../assets/js/app.js"></script>
+</body>
+
+</html>

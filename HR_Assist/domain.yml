@@ -1,0 +1,39 @@
+intents:
+  - greet
+  - mood_happy
+  - mood_unhappy
+  - goodbye
+  - bot_challenge
+  - joke_request
+
+actions:
+  - utter_greet
+  - utter_happy
+  - utter_cheer_up
+  - utter_goodbye
+  - utter_iambot
+  - utter_joke
+  - action_joke
+
+templates:
+
+  utter_greet:
+    - text: "Hi, how is it going?"
+
+  utter_happy:
+    - text: "Great, carry on!"
+
+  utter_cheer_up:
+    - text: "Don't be sad. Keep smiling!"
+
+  utter_goodbye:
+    - text: "Goodbye!"
+
+  utter_default:
+    - text: "Huh, I don't get you!"
+
+  utter_iambot:
+    - text: "I am a bot under development."
+
+  utter_joke:
+    - text: "What do you call an alligator in vest? An investigator!"
