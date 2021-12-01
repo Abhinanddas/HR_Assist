@@ -63,3 +63,5 @@ This command will pull the needed Docker images and makes multiple containers to
     Rasa Core works by creating training data from your stories and training a model on that data.
 
 
+# command for chrome with CORS disabled
+    nohup google-chrome --disable-web-security --user-data-dir='/tmp' &
