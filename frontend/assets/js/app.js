@@ -19,17 +19,22 @@ $(function () {
         ];
 
         fetchChatBotResponse(msg).then((response) => {
-            generate_message(response.text, "user");
+            response.forEach(function (message) {
+                generate_message(message.text, "user");
+            });
         });
     });
 
     function generate_message(msg, type) {
         INDEX++;
+        let userIcon = "../assets/images/user.jpg";
+        let chatBotIcon = "../assets/images/images.png";
+        let imageUrl = type == 'self' ? userIcon : chatBotIcon;
         var str = "";
         str += "<div id='cm-msg-" + INDEX + "' class=\"chat-msg " + type + '">';
         str += '          <span class="msg-avatar">';
         str +=
-            '            <img src="https://image.crisp.im/avatar/operator/196af8cc-f6ad-4ef7-afd1-c45d5231387c/240/?1483361727745">';
+            '            <img src= ' + imageUrl + '>';
         str += "          </span>";
         str += '          <div class="cm-msg-text">';
         str += msg;
@@ -121,18 +126,20 @@ function fetchChatBotResponse(msg) {
         'message': msg,
     };
 
-    let url = 'http://localhost:5005/webhooks/rest/webhook';
+    let url = "http://192.168.232.78:5005/webhooks/rest/webhook";
 
     let headers = {
         'Access-Control-Allow-Origin': '*',
-        'Content-Type':'application/json',
+        'content-type': 'application/json',
+        'Access-Control-Allow-Methods': "DELETE, POST, GET, OPTIONS",
+        'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With',
     };
     return $.ajax({
-        type: 'post',
+        type: "POST",
         url: url,
-        dataType:'json',
-        data: data,
-        headers:headers,
+        dataType: "json",
+        data: JSON.stringify(data),
+        headers: headers,
         async: false,
     }).done((response) => {
         return response.responseJSON;
