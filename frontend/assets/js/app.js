@@ -126,7 +126,7 @@ function fetchChatBotResponse(msg) {
         'message': msg,
     };
 
-    let url = "http://192.168.232.78:5005/webhooks/rest/webhook";
+    let url = "http://localhost:5005/webhooks/rest/webhook";
 
     let headers = {
         'Access-Control-Allow-Origin': '*',
